@@ -1,20 +1,13 @@
-import { useState } from 'react'
+import React from 'react';
+import Navbar from './components/navbar/Navbar';
+import Main from './components/main/Main';
+import styles from './App.module.css';
 
-import Navbar from './components/navbar/Navbar'
-import Footer from './components/footer/Footer'
-import Main from './components/main/Main'
-
-
-function App() {
-  // const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <div className={styles.appContainer}>
       <Navbar />
-      <Main/>
-      <Footer />
+      <Main />
     </div>
-  )
+  );
 }
-
-export default App
