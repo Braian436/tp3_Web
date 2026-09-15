@@ -31,9 +31,9 @@
 }
 
 .notas {
-    font-size: 0.85rem !important;
-    color: #888 !important;
-    margin-top: 0.5rem !important;
+    font-size: 0.85rem;
+    color: #908d8d !important;
+    margin-top: 0.5rem;
 }
 
 .infoPrecio {

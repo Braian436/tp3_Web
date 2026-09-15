@@ -1,56 +1,41 @@
 import React from "react";
 import Logo from "../../assets/LOGO-BARBER.png";
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
     return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div className="container">
-                    <a className="navbar-brand" href="#inicio">
-                        <img src={Logo} alt="Barbería Clase A" style={{ height: "90px" }} />
-                    </a>
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+        <header className={styles.header}>
+            <nav className={styles.navbar}>
+                
+                {/* Logo */}
+                <a href="#inicio" className={styles.brand}>
+                    <img src={Logo} alt="Barbería Clase A" className={styles.logoRedondo} />
+                </a>
 
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav ms-auto">
-                            <li className="nav-item">
-                                <a
-                                className="nav-link active"
-                                aria-current="page"
-                                href="#inicio"
-                                >
-                                Inicio
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#servicios">
-                                Servicios
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#nosotros">
-                                Nosotros
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#contacto">
-                                Contacto
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <ul className={styles.navMenu}>
+                    <li className={styles.navItem}>
+                        <a href="#inicio" className={`${styles.botonLindo} ${styles.botonActivo}`}>
+                            Inicio
+                        </a>
+                    </li>
+                    <li className={styles.navItem}>
+                        <a href="#servicios" className={styles.botonLindo}>
+                            Servicios
+                        </a>
+                    </li>
+                    <li className={styles.navItem}>
+                        <a href="#nosotros" className={styles.botonLindo}>
+                            Nosotros
+                        </a>
+                    </li>
+                    <li className={styles.navItem}>
+                        <a href="#contacto" className={styles.botonLindo}>
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+                
             </nav>
-        </div>
+        </header>
     );
 }
