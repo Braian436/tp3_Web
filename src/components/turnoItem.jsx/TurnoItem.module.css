@@ -1,23 +1,21 @@
 .item {
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 1.5rem;
+    border-radius: 20px;
+    padding: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 5px solid #c0a060;
+    border-left: 5px solid #d4af37;
 }
 
 .infoPrincipal h3 {
-    margin: 0 0 0.5rem 0;
     color: #1a1a1a;
 }
 
 .infoPrincipal p {
     margin: 0.25rem 0;
     color: #444;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .servicio span {
@@ -33,7 +31,6 @@
 .notas {
     font-size: 0.85rem;
     color: #908d8d !important;
-    margin-top: 0.5rem;
 }
 
 .infoPrecio {

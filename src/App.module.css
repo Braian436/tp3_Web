@@ -2,4 +2,6 @@
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Organiza Navbar, Main y Footer en columna */
 }
