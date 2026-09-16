@@ -1,0 +1,47 @@
+
+.footer {
+  background-color: #212529;
+  color: #d4af37;
+  padding: 2rem 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+
+.infoFila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.infoColumna {
+  flex: 1;
+}
+
+.dividir {
+  border-top: 2px solid #d4af37;
+  opacity: 1;
+  margin: 1.5rem 0;
+}
+
+
+.socialFila {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.socialIcon {
+  color: #d4af37;
+  font-size: 1.8rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.socialIcon:hover {
+  color: #ffffff;
+  transform: translateY(-4px) scale(1.1);
+  text-shadow: 0 4px 10px rgba(212, 175, 55, 0.6);
+}

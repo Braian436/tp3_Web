@@ -1,49 +1,18 @@
-/* src/components/main/Main.module.css */
-
-.contenido {
-  flex: 1; /* Empuja el footer hacia abajo si hay poco contenido */
-  padding: 40px 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-  font-family: 'Arial', sans-serif;
-}
-
-/* Título principal del sistema */
-.contenido h2 {
-  font-family: 'Impact', 'Arial Black', sans-serif;
-  color: #d4af37; /* El mismo dorado de tus tarjetas */
-  text-transform: uppercase;
-  font-size: 2.2rem;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
-}
-
-/* Descripción del sistema */
-.descripcion {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #cccccc; /* Gris claro para que resalte sobre el fondo negro general */
+.mainContent {
+  padding: 2rem;
   max-width: 900px;
-  margin-bottom: 40px;
-}
-
-/* Título de la sección de barberos */
-.contenido h3 {
-  font-family: 'Impact', 'Arial Black', sans-serif;
-  color: #ffffff;
-  text-transform: uppercase;
-  font-size: 1.6rem;
-  margin-bottom: 25px;
-  border-bottom: 2px dashed #444;
-  padding-bottom: 10px;
-  letter-spacing: 1px;
-}
-
-/* Contenedor de las tarjetas para ponerlas en fila de forma responsiva */
-.modulos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  margin: 0 auto;
+  flex: 1; /* Esto empuja el footer hacia abajo */
   width: 100%;
-  justify-items: start; /* Alinea las tarjetas a la izquierda dentro de su celda */
+}
+
+.headerTitle {
+  margin-bottom: 2rem;
+  border-bottom: 3px solid #c0a060;
+  padding-bottom: 0.5rem;
+}
+
+.headerTitle h1 {
+  color: #1a1a1a;
+  margin: 0;
 }
