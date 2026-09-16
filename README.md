@@ -18,5 +18,7 @@ git clone https://github.com/Braian436/web_pepe.git
 npm install
 npm run dev
 ```
-<img width="1440" height="834" alt="Prueba_de_pagina" src="https://github.com/user-attachments/assets/acf2ee62-8ee8-4cf6-b5bf-66bdc51a85cf" />
-<img width="1440" height="834" alt="Captura desde 2026-08-30 16-03-31" src="https://github.com/user-attachments/assets/5a4d99eb-440a-4fa2-9ee9-f2becf5d5738" />
+<img width="1920" height="1028" alt="DATOS_VACIOS" src="https://github.com/user-attachments/assets/762be95c-6cc2-4067-acac-22f0f1110671" />
+<img width="1920" height="1031" alt="DATOS_ERROR" src="https://github.com/user-attachments/assets/e90ec04f-dfda-4f9b-b20e-5c3a611b322a" />
+<img width="1920" height="1024" alt="DATOS_CARGADOS" src="https://github.com/user-attachments/assets/17819b0d-102f-4b84-9bf0-5089594d8ddf" />
+
