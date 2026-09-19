@@ -1,39 +1,45 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import Navbar from './components/navbar/Navbar';
-import Main from './components/main/Main';
 import Footer from './components/footer/Footer';
-import styles from './App.module.css';
+import ProductCard from './components/productCard/ProductCard';
 
-const turnosIniciales = [
-  { id: 1, cliente: 'Nico Rios', servicio: 'Corte + Barba', precio: 11000, barbero: 'Pepe', notas: 'Cliente habitual' },
-  { id: 2, cliente: 'Gabi Tolaba', servicio: 'Color', precio: 25000, barbero: 'Gallina', notas: 'Alergia a tintes fuertes' },
-  { id: 3, cliente: 'Nico Rios', servicio: 'Lavado', precio: 0, barbero: 'Pepe', notas: 'Promoción por 5to corte' }, 
-  { id: 4, cliente: 'Gabi Tolaba', servicio: 'Corte de cabello', precio: 8000, barbero: null, notas: 'Atiende el primer barbero disponible' },
-  { id: 5, cliente: 'Renso Pistan', servicio: 'Diseño de Cejas', precio: 3000, barbero: 'Gallina', notas: 'Primera vez' },
-  { id: 6, cliente: 'Amaya Braian', servicio: 'Corte con diseño', precio: 15000, barbero: 'Pepe', notas: 'Diseño en V' }
+const productosBarberia = [
+  { id: 1, nombre: 'Cera en Polvo Voluminizadora (Matte Dust)', precio: 7500, stock: 6, imagen: 'https://imgs.search.brave.com/jzn8wXizdNh7p2XyAv0BB00v5OaSnp2O0bN5tYCeBg8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/Xzk5MzU5My1NTEE1/MTkyMTQ2NTI2N18x/MDIwMjItRS53ZWJw'},
+  { id: 2, nombre: 'Gel Fijador Extra Fuerte 280g', precio: 4800, stock: 12, imagen: 'https://imgs.search.brave.com/mBHPKFq3GbvQhSzSF72MkjcX-yxYm949Hsf26x1-51I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzgyOTIwNC1NTFU3/NzQzMzM1MjAyNF8w/NzIwMjQtRS53ZWJw'},
+  { id: 3, nombre: 'Pomada Modeladora Probelle 150g', precio: 8900, stock: 0, imagen: 'https://imgs.search.brave.com/qQNPjbmeDmZRpzrs7rcGuKv5GIvhzYny55Vz0Bl4Ks4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/c2hvcHB1Yi5pby9j/ZG4tY2dpL2ltYWdl/L3c9NjAwLGg9NjAw/LHE9ODAsZj1hdXRv/L2FrYWljb3NtZXRp/Y29zL21lZGlhL3Vw/bG9hZHMvcHJvZHV0/b3MvZm90by9iZmUy/M2EyZGU5NDdmZmls/ZS5wbmc'},
+  { id: 4, nombre: 'Aceite Nutritivo para Barba', precio: 6200, stock: 4, imagen: 'https://imgs.search.brave.com/NISWcFMCk4wooB5bFrE30PwCdkI5FYv9vMSoRiWmOi4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzExTW5HUEdaLUwu/anBn'},
+  { id: 5, nombre: 'After Shave Lotion', precio: 5400, stock: 0, imagen: 'https://imgs.search.brave.com/uG-KELiL9_B5vx38W7chJh3vGtMHacGrxQ2MEO0q4Ks/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vU19RX05QXzJY/XzYyODY2Mi1NTEE2/OTY0NDYyNzI3MF8w/NTIwMjMtVi53ZWJw'},
+  { id: 6, nombre: 'Shampoo Anticaída y Fortificante', precio: 9800, stock: 9, imagen: 'https://imgs.search.brave.com/xqSySssKoj7oQ97PsJoJipBsSvQ_Ocb1nzAn2zeYBXw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY/XzY2NjE5Ny1NQ083/OTkxMjc2MDA4NF8x/MDIwMjQtRS53ZWJw'}
 ];
 
 export default function App() {
-
-  const [estadoPantalla, setEstadoPantalla] = useState('datos'); 
-  const [filtroServicio, setFiltroServicio] = useState('');
-  const [orden, setOrden] = useState('asc'); 
-  const turnosFiltradosYOrdenados = [...turnosIniciales]
-    .filter(turno => turno.servicio.toLowerCase().includes(filtroServicio.toLowerCase()))
-    .sort((a, b) => orden === 'asc' ? a.precio - b.precio : b.precio - a.precio);
-
   return (
-    <div className={styles.appContainer}>
+    <div>
       <Navbar />
-      <Main 
-        turnos={turnosFiltradosYOrdenados}
-        estadoPantalla={estadoPantalla}
-        filtroActual={filtroServicio}
-        ordenActual={orden}
-        cambiarFiltro={(e) => setFiltroServicio(e.target.value)}
-        ordenar={() => setOrden(orden === 'asc' ? 'desc' : 'asc')}
-        simularEstado={(nuevoEstado) => setEstadoPantalla(nuevoEstado)}
-      />
+      <section className="my-5">
+        <Container>
+          <header className="mb-4 text-center text-sm-start">
+            <h2 className="fw-bold text-dark text-center item-center">
+              Artículos y Productos de Barbería
+            </h2>
+          </header>
+
+          <Row className="g-4">
+            {productosBarberia.map((producto) => (
+              <Col key={producto.id} xs={12} sm={6} md={4} lg={4}>
+                <ProductCard 
+                  nombre={producto.nombre}
+                  precio={producto.precio}
+                  imagen={producto.imagen}
+                  stock={producto.stock}
+                />
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+
       <Footer />
     </div>
   );
